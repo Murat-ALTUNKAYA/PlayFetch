@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class DestroyOutOfBoundsX : MonoBehaviour
 {
     private float leftLimit = -50;
     private float bottomLimit = -2;
+
+    
 
     void Update()
     {
