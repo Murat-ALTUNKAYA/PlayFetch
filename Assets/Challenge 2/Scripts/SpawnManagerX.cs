@@ -7,8 +7,6 @@ public class SpawnManagerX : MonoBehaviour
 {
     public GameObject[] ballPrefabs;
     
-    
-    
 
     private float spawnLimitXLeft = -22;
     private float spawnLimitXRight = 7;
@@ -26,11 +24,13 @@ public class SpawnManagerX : MonoBehaviour
     
     void SpawnRandomBall ()
     {
-        Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
+        if (Timer.gameContinue)
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(spawnLimitXLeft, spawnLimitXRight), spawnPosY, 0);
 
-        int number = Random.Range(0, 3);
-        Instantiate(ballPrefabs[number], spawnPos, ballPrefabs[number].transform.rotation);
-
+            int number = Random.Range(0, 3);
+            Instantiate(ballPrefabs[number], spawnPos, ballPrefabs[number].transform.rotation);
+        }
     }
 
 }

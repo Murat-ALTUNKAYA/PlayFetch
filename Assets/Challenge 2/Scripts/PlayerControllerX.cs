@@ -10,15 +10,17 @@ public class PlayerControllerX : MonoBehaviour
     private bool spawned = false;
     private float decay;
 
-    void Update()
+    public void Update()
     {
-        Reset();
-        if (Input.GetKeyDown(KeyCode.Space) && !spawned)
+        if (Timer.gameContinue)
         {
-            decay = 1f;
-            spawned = true;
-            Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
-
+            Reset();
+            if (Input.GetKeyDown(KeyCode.Space) && !spawned)
+            {
+                decay = 1f;
+                spawned = true;
+                Instantiate(dogPrefab, transform.position, dogPrefab.transform.rotation);
+            }
         }
     }
     private void Reset()
