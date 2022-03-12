@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -14,10 +12,14 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
-        information.text = "Köpeklerle topu yakalamak için 'space' basabilirsin.";
+        information.text = "Köpeklerle topu yakalamak için 'space' tuþuna basabilirsin.";
     }
 
     void Update()
+    {
+        TimeControl();
+    }
+    private void TimeControl()
     {
         if (gameContinue)
         {
@@ -31,7 +33,6 @@ public class Timer : MonoBehaviour
             button.SetActive(true);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         healtCounter = healtCounter - 1;

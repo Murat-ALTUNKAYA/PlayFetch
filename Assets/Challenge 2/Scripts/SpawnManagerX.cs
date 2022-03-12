@@ -1,28 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class SpawnManagerX : MonoBehaviour
 {
     public GameObject[] ballPrefabs;
-    
-
-    private float spawnLimitXLeft = -22;
-    private float spawnLimitXRight = 7;
-    private float spawnPosY = 30;
-
-    private float startDelay = 1.0f;
-    private float spawnInterval;
+    private float spawnLimitXLeft = -22, spawnLimitXRight = 7, spawnPosY = 30, startDelay = 1.0f, spawnInterval;
 
     void Start()
     {
         spawnInterval = Random.Range(3f, 5f);
         InvokeRepeating("SpawnRandomBall", startDelay, spawnInterval);
     }
-
-    
-    void SpawnRandomBall ()
+    void SpawnRandomBall()
     {
         if (Timer.gameContinue)
         {

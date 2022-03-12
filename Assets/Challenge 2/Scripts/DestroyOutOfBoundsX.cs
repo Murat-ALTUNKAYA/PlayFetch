@@ -1,14 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 public class DestroyOutOfBoundsX : MonoBehaviour
 {
-    private float leftLimit = -50;
-    private float bottomLimit = -2;
-
-    
+    private float leftLimit = -50, bottomLimit = -2;
+       
 
     void Update()
     {

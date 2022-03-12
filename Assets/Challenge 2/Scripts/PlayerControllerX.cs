@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using System;
+﻿using UnityEngine;
 
 public class PlayerControllerX : MonoBehaviour
 {
@@ -10,7 +7,11 @@ public class PlayerControllerX : MonoBehaviour
     private bool spawned = false;
     private float decay;
 
-    public void Update()
+    private void Update()
+    {
+        DogSpawned();
+    }
+    private void DogSpawned()
     {
         if (Timer.gameContinue)
         {
@@ -36,5 +37,3 @@ public class PlayerControllerX : MonoBehaviour
         }
     }
 }
-
-
