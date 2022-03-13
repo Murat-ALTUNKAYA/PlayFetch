@@ -6,7 +6,7 @@ public class Timer : MonoBehaviour
 {
     public Text time, healt, status, information;
     float timeCounter = 0.0f;
-    public int healtCounter = 3;
+    public int HealtCounter = 3;
     public static bool gameContinue = true;
     public GameObject button;
 
@@ -35,9 +35,9 @@ public class Timer : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        healtCounter = healtCounter - 1;
-        healt.text = healtCounter + "";
-        if (healtCounter == 0)
+        HealtCounter = HealtCounter - 1;
+        healt.text = HealtCounter + "";
+        if (HealtCounter == 0)
         {
             gameContinue = false;
         }
